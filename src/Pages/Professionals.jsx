@@ -105,7 +105,7 @@ const Professionals = () => {
                 <p className='font-medium text-xsm'>Select</p>
               <i class={`fa fa-angle-down duration-300 ${showSelectDropdown ? 'rotate-180' : ''}`} aria-hidden="true"></i>
               </div>
-              <div className={`${showSelectDropdown ? 'visible opacity-100' : 'invisible opacity-0'} duration-100 absolute shadow-lg top-10 right-0 bg-white`}>
+              <div className={`${showSelectDropdown ? 'visible opacity-100' : 'invisible opacity-0'} duration-100 z-[1000] absolute shadow-lg top-10 right-0 bg-white`}>
                 <ul>
                   {selectOption.map((item,index)=>{
                     return(
@@ -163,7 +163,7 @@ const Professionals = () => {
         </div>
 
         {/* Pagination */}
-        <div className='flex z-50 items-center justify-between'>
+        <div className='flex z-[10] items-center justify-between'>
             <p className='font-semibold text-xsm text-slate-500'>Showing 1 of 1 Pages</p>
             <div className=' flex items-center gap-1 p-2 z-50 rounded-lg'>
             <p className='font-semibold text-xsm text-slate-500'>Go to Page No</p>
