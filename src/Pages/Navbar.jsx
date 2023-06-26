@@ -27,6 +27,9 @@ const Navbar = () => {
                 <ul className='w-full'>
                 <li><Link to="/my-account"><p className='font-medium w-max text-black pl-4 pr-12 text-left border-b py-3 text-xsm'>My Account</p></Link></li>
                 <li><p className='font-medium w-max text-black pl-4 pr-12 text-left py-3 text-xsm'>Logout</p></li>
+                <li><Link to="/login"><p className='font-medium w-max text-black pl-4 pr-12 text-left border-b py-3 text-xsm'>My Account</p></Link></li>
+                <li><Link to="/forgotpassword"><p className='font-medium w-max text-black pl-4 pr-12 text-left border-b py-3 text-xsm'>My Account</p></Link></li>
+                <li><Link to="/otp-verification"><p className='font-medium w-max text-black pl-4 pr-12 text-left border-b py-3 text-xsm'>My Account</p></Link></li>
                 </ul>
             </div>
             </div>
