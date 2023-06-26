@@ -20,11 +20,11 @@ const Otpverification = () => {
 
             
             <div className='flex items-center justify-between'>
-              <input type="text" className='w-10 p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
-              <input type="text" className='w-10 p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
-              <input type="text" className='w-10 p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
-              <input type="text" className='w-10 p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
-              <input type="text" className='w-10 p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
+              <input type="number" maxLength='1' className='w-10 appearance-none p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
+              <input type="number" maxLength='1' className='w-10 appearance-none p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
+              <input type="number" maxLength='1' className='w-10 appearance-none p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
+              <input type="number" maxLength='1' className='w-10 appearance-none p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
+              <input type="number" maxLength='1' className='w-10 appearance-none p-2 focus:ring-1 focus:ring-blue-500 ring-1 ring-black/20 outline-none focus:outline-none duration-200 rounded-md' />
             </div>
 
             <div>
