@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const Patients = () => {
     const dummyArray = Array(5).fill(1)
+    const inputRef = useRef(null)
   return (
     <div className='flex flex-col items-center bg-blue-50/50 justify-center lg:p-20 md:p-12 sm:p-4'>
         <div className='space-y-2 lg:w-max md:w-full sm:w-full'>
         <div className='flex items-center justify-between'>
-            <p className='font-semibold text-xsm'>Patients</p>
+            <p className='font-bold text-lg'>Patients</p>
 
             
 
@@ -15,8 +16,8 @@ const Patients = () => {
 
             {/* Search Input */}
             <div className='bg-white flex items-center gap-2 p-2 z-50 rounded-lg'>
-            <i className='fa bg-transparent text-blue-300 fa-search'></i>
-            <input type="text" placeholder='Search..' className='text-xsm font-lighter focus:outline-none outline-none bg-transparent' />
+            <i onClick={()=>{inputRef && inputRef.current.focus()}} className='fa bg-transparent text-blue-300 fa-search'></i>
+            <input ref={inputRef} type="text" placeholder='Search..' className='text-xsm font-lighter focus:outline-none outline-none bg-transparent' />
             </div>
 
         </div>
@@ -24,14 +25,14 @@ const Patients = () => {
 
         <div className="relative shadowtable overflow-x-auto  sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">Id</th>
-                <th scope="col" className="px-6 py-3">Patient Name</th>
-                <th scope="col" className="px-6 py-3">Email Id</th>
-                <th scope="col" className="px-6 py-3">Mobile Number</th>
-                <th scope="col" className="px-6 py-3">Registration Number</th>
-                <th scope="col" className="px-6 py-3">Delete</th>
+                <th scope="col" className="px-6 py-3 capitalize">Id</th>
+                <th scope="col" className="px-6 py-3 capitalize">Patient Name</th>
+                <th scope="col" className="px-6 py-3 capitalize">Email Id</th>
+                <th scope="col" className="px-6 py-3 capitalize">Mobile Number</th>
+                <th scope="col" className="px-6 py-3 capitalize">Registration Number</th>
+                <th scope="col" className="px-6 py-3 capitalize">Delete</th>
               </tr>
             </thead>
             <tbody>

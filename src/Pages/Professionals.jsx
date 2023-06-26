@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import React, { useRef, useState } from 'react'
 const Professionals = () => {
   const userDetailArray = [
     {
@@ -83,18 +82,19 @@ const Professionals = () => {
       REGISTRATION_NUMBER: "PAT56789"
     }
   ];
-  
+    const inputRef = useRef(null)
+    const focusInput = () => {inputRef.current && inputRef.current.focus()}
     const [showSelectDropdown,setShowSelectDropdown] = useState(false)
     const [selectOptionValue,setSelectOptionValue] = useState('All')
     const selectOption = ['All','Dentist','Pharmasist','Label Technician','Patient']
      
     const filterBasedOnSelectedValue = selectOptionValue !== 'All' ? userDetailArray.filter(item => item.USER_TYPE === selectOptionValue) : userDetailArray  
-    console.log(filterBasedOnSelectedValue)
+    console.log(typeof selectOption)
   return (
     <div className='flex flex-col items-center bg-blue-50/50 justify-center lg:p-20 md:p-12 sm:p-4'>
         <div className='space-y-2 lg:w-max md:w-full sm:w-full'>
         <div className='flex items-center justify-between'>
-            <p className='font-semibold text-xsm'>Professional</p>
+            <p className='font-bold text-lg'>Professional</p>
 
             
 
@@ -103,7 +103,7 @@ const Professionals = () => {
             <div className='z-50 relative'>
               <div onClick={()=>{setShowSelectDropdown(!showSelectDropdown)}} className='flex gap-16 items-center bg-white p-2 z-50'>
                 <p className='font-medium text-xsm'>Select</p>
-              <i class={`fa fa-angle-down duration-300 ${showSelectDropdown ? 'rotate-180' : ''}`} aria-hidden="true"></i>
+              <i  className={`fa fa-angle-down duration-300 ${showSelectDropdown ? 'rotate-180' : ''}`} aria-hidden="true"></i>
               </div>
               <div className={`${showSelectDropdown ? 'visible opacity-100' : 'invisible opacity-0'} duration-100 z-[1000] absolute shadow-lg top-10 right-0 bg-white`}>
                 <ul>
@@ -119,22 +119,22 @@ const Professionals = () => {
 
             {/* Search Input */}
             <div className='bg-white flex items-center gap-2 p-2 z-50 rounded-lg'>
-            <i className='fa bg-transparent text-blue-300 fa-search'></i>
-            <input type="text" placeholder='Search..' className='text-xsm font-lighter focus:outline-none outline-none bg-transparent' />
+            <i onClick={focusInput} className='fa bg-transparent text-blue-300 fa-search'></i>
+            <input ref={inputRef} type="text" placeholder='Search..' className='text-xsm font-lighter focus:outline-none outline-none bg-transparent' />
             </div>
             </div>
         </div>
         <div className="relative shadowtable overflow-x-auto  sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">Id</th>
-                <th scope="col" className="px-6 py-3">User Name</th>
-                <th scope="col" className="px-6 py-3">User Type</th>
-                <th scope="col" className="px-6 py-3">Email Id</th>
-                <th scope="col" className="px-6 py-3">Mobile Number</th>
-                <th scope="col" className="px-6 py-3">Registration Number</th>
-                <th scope="col" className="px-6 py-3">Status</th>
+                <th scope="col" className="px-6 py-3 capitalize">Id</th>
+                <th scope="col" className="px-6 py-3 capitalize">User Name</th>
+                <th scope="col" className="px-6 py-3 capitalize">User Type</th>
+                <th scope="col" className="px-6 py-3 capitalize">Email Id</th>
+                <th scope="col" className="px-6 py-3 capitalize">Mobile Number</th>
+                <th scope="col" className="px-6 py-3 capitalize">Registration Number</th>
+                <th scope="col" className="px-6 py-3 capitalize">Status</th>
               </tr>
             </thead>
             <tbody>

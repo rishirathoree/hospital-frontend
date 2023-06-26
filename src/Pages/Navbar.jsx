@@ -17,7 +17,7 @@ const Navbar = () => {
                 })}
             </ul>
             <div className='flex items-center gap-4'>
-            <Link to="/Notification"><i className="fa fa-lg fa-bell-o" aria-hidden="true"></i></Link>
+            <Link to="/Notification"><i className="fa text-white fa-lg fa-bell-o" aria-hidden="true"></i></Link>
             
 
             {/* Drodpwon with profile */}

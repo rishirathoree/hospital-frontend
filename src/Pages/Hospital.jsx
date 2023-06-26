@@ -10,12 +10,7 @@ const Hospital = () => {
     <div className='flex flex-col items-center bg-blue-50/50 justify-center p-20'>
         <div className='space-y-2'>
         <div className='flex items-center justify-between'>
-            <p className='font-semibold text-xsm'>Hospitals</p>
-
-            
-
-
-
+            <p className='font-bold text-lg'>Hospitals</p>
 
             {/* Add Hospital Button */}
             <div className='z-50'>
@@ -28,12 +23,12 @@ const Hospital = () => {
 
         <div className="relative shadowtable overflow-x-auto  sm:rounded-lg">
           <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <thead className="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                <th scope="col" className="px-6 py-3">Id</th>
-                <th scope="col" className="pr-80 py-3">Hospitals</th>
-                <th scope="col" className="px-6 py-3">Edit</th>
-                <th scope="col" className="px-6 py-3">Delete</th>
+                <th scope="col" className="px-6 py-3 capitalize">Id</th>
+                <th scope="col" className="pr-80 py-3 capitalize">Hospitals</th>
+                <th scope="col" className="px-6 py-3 capitalize">Edit</th>
+                <th scope="col" className="px-6 py-3 capitalize">Delete</th>
               </tr>
             </thead>
             <tbody>

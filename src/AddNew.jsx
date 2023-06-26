@@ -7,8 +7,8 @@ const AddNew = () => {
             <p className='font-semibold text-lg'>Register</p>
 
             <div className='flex items-center justify-center p-4'>
-                <div className='w-40 h-40 rounded-full bg-blue-50 flex items-center justify-center ring-1 ring-blue-500'>
-                    <i className='fa fa-user-o fa-5x'></i>
+                <div className='w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center ring-1 ring-blue-500'>
+                    <i className='fa fa-user-o fa-2x'></i>
                 </div>
             </div>
 

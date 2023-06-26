@@ -6,7 +6,7 @@ const Notification = () => {
     <div className='flex flex-col items-center bg-blue-50/50 justify-center lg:p-20 md:p-12 sm:p-4'>
         <div className='space-y-2 lg:w-2/3 md:w-full sm:w-full'>
         <div className='flex items-center justify-between'>
-            <p className='font-semibold text-xsm'>Notifications</p>
+            <p className='font-bold text-lg'>Notifications</p>
 
         </div>
 
@@ -15,8 +15,8 @@ const Notification = () => {
           <table className="w-full text-sm text-left">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 d">
               <tr className='w-full'>
-                <th scope="col" className="px-6 py-3">Id</th>
-                <th scope="col" className="px-6 py-3">Notifications</th>
+                <th scope="col" className="px-6 py-3 capitalize">Id</th>
+                <th scope="col" className="px-6 py-3 capitalize">Notifications</th>
               </tr>
             </thead>
             <tbody>
