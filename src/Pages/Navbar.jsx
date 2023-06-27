@@ -4,10 +4,11 @@ import { Link, useLocation } from 'react-router-dom'
 const Navbar = () => {
     const location = useLocation()
     const [showAccountDropdown,setShowAccountDropdown] = useState(false)
+    const [showAccount,setShowAccount] = useState(false)
     const navs = ['Unapproved Professional','Unapproved Patient','Professionals','Patients','Add New','Hospitals']
   return (
     <div className='flex items-center justify-between lg:px-40 md:px-20 sm:px-4 duration-500 py-4 bg-blue-400'>
-        <Link to="/"><p className='font-bold text-white text-lg'>Kedi</p></Link>
+        <Link to="/"><p className='font-bold text-white text-2xl'>Kedi</p></Link>
         <div className='flex items-center gap-4 '>
             <ul className=' lg:inline-flex md:inline-flex sm:hidden gap-4 items-center'>
                 {navs.map((item,index)=>{
@@ -21,7 +22,7 @@ const Navbar = () => {
             
 
             {/* Drodpwon with profile */}
-            <div className='relative'>
+            <div className='relative z-[1000]'>
             <div onClick={()=>{setShowAccountDropdown(!showAccountDropdown)}} className='w-10 h-10 rounded-full bg-white'></div>
             <div className={`absolute top-12 rounded-md shadow right-0 duration-200 bg-white ${showAccountDropdown ? 'visible opacity-100 translate-x-0 translate-y-0 scale-100' : 'invisible opacity-0 translate-x-4 -translate-y-8 scale-75'}`}>
                 <ul className='w-full'>

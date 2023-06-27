@@ -138,26 +138,31 @@ const Professionals = () => {
               </tr>
             </thead>
             <tbody>
-              {filterBasedOnSelectedValue.map((item, index) => {
-                return (
-                  <tr
-                    key={index}
-                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-                  >
-                    <td className="px-6 py-4 ">6265</td>
-                    <td className="px-6 py-4 ">Roman</td>
-                    <td className="px-6 py-4 ">Doctor</td>
-                    <td className="px-6 py-4 ">rishi@gmail.com</td>
-                    <td className="px-6 py-4 ">652542134165</td>
-                    <td className="px-6 py-4 ">20-09-2020</td>
-                    <td className="flex items-center px-6 py-8 space-x-3 text-center">
-                      <div className="flex gap-4 items-center ">
-                        <i className="fa cursor-pointer fa-sm fa-trash inline-block p-2 rounded-full bg-red-100"></i>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
+              {filterBasedOnSelectedValue.length > 0 ? 
+                filterBasedOnSelectedValue.map((item, index) => {
+                  return (
+                    <tr
+                      key={index}
+                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                    >
+                      <td className="px-6 py-4 ">6265</td>
+                      <td className="px-6 py-4 ">Roman</td>
+                      <td className="px-6 py-4 ">Doctor</td>
+                      <td className="px-6 py-4 ">rishi@gmail.com</td>
+                      <td className="px-6 py-4 ">652542134165</td>
+                      <td className="px-6 py-4 ">20-09-2020</td>
+                      <td className="flex items-center px-6 py-8 space-x-3 text-center">
+                        <div className="flex gap-4 items-center ">
+                          <i className="fa cursor-pointer fa-sm fa-trash inline-block p-2 rounded-full bg-red-100"></i>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })
+               : (
+                <p>hello</p>
+              )}
+              
             </tbody>
           </table>
         </div>
