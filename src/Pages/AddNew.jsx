@@ -1,16 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AddNew = () => {
+    const [pfp,setPfp] = useState(null)
+    console.log(pfp)
+    const handleChangeProfile = (e) => {
+        const file = e.target.files[0]
+        if(file){
+            const reader = new FileReader()
+            reader.onload = () => {
+                setPfp(reader.result)
+            }
+            reader.readAsDataURL(file)
+        }
+    }
   return (
-    <div className='flex flex-col items-center   h-full bg-blue-50/50 justify-center lg:p-20 md:p-20 sm:p-4'>
+    <div className='flex flex-col items-center h-full bg-blue-50/50 justify-center lg:p-20 md:p-20 sm:p-4'>
         <div className='lg:w-1/2 md:w-full sm:w-full bg-white p-4 shadowtable space-y-4 rounded-lg'>
             <p className='font-semibold text-lg'>Register</p>
 
-            <div className='flex items-center justify-center p-4'>
+            {pfp ?  
+            <div className='flex items-center  justify-center'>
+            <div className='w-32 h-32 rounded-full shadowtable ring-8 z-50 ring-white group relative ring-1 overflow-hidden ring-black/5'>
+            <div className='bg-black absolute w-full flex items-center justify-center group-hover:visible bg-opacity-10  group-hover:opacity-100 opacity-0 duration-500 invisible top-0 right-0 h-full'>
+                <i className='fa fa-trash text-white fa-5x cursor-pointer' onClick={()=>{setPfp(null)}}></i>
+            </div>
+            <img src={pfp} className='w-full h-full object-cover' alt="" />
+            </div>
+            </div>
+            : 
+            <div className="flex items-center flex-col justify-center">
+                <label for="dropzone-file" className="flex w-32 rounded-full h-32 flex items-center justify-center py-12 border-2 border-blue-500 ring-1 ring-black-500 cursor-pointer bg-blue-50  hover:bg-blue-50">
+                <div className="flex flex-col items-center justify-center ">
+                <i className="fa fa-user-o text-slate-500 fa-2x" aria-hidden="true"></i>
+                </div>
+                <input onChange={handleChangeProfile} id="dropzone-file" type="file" className="hidden" />
+                </label>
+            </div> 
+            }
+            {/* <div className='flex items-center justify-center p-4'>
                 <div className='w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center ring-1 ring-blue-500'>
                     <i className='fa fa-user-o fa-2x'></i>
                 </div>
-            </div>
+            </div> */}
 
                 <div>
                     <p className='font-semibold text-xsm mb-2'>Select your type</p>
@@ -100,7 +131,7 @@ const AddNew = () => {
                     <p className='font-semibold mb-2 text-xsm'>Document Upload</p>
                 <label for="dropzone-file" className="flex flex-col items-center justify-center w-full py-12 border-2 border-blue-500 border-dashed rounded-lg cursor-pointer bg-blue-50  hover:bg-blue-50">
                 <div className="flex flex-col items-center justify-center ">
-                <i class="fa fa-file-image-o text-blue-500 fa-2x" aria-hidden="true"></i>
+                <i className="fa fa-file-image-o text-blue-500 fa-2x" aria-hidden="true"></i>
                 <p className="text-sm text-blue-500 ">Choose Picture</p>
                 </div>
                 <input id="dropzone-file" type="file" className="hidden" />

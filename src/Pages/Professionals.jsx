@@ -91,7 +91,7 @@ const Professionals = () => {
     const filterBasedOnSelectedValue = selectOptionValue !== 'All' ? userDetailArray.filter(item => item.USER_TYPE === selectOptionValue) : userDetailArray  
     console.log(typeof selectOption)
   return (
-    <div className='flex flex-col items-center bg-blue-50/50 justify-center lg:p-20 md:p-12 sm:p-4'>
+    <div className={`flex flex-col items-center bg-blue-50/50 justify-center lg:p-20 md:p-12 sm:p-4`}>
         <div className='space-y-2 lg:w-max md:w-full sm:w-full'>
         <div className='flex items-center justify-between'>
             <p className='font-bold text-lg'>Professional</p>
@@ -100,16 +100,16 @@ const Professionals = () => {
 
             <div className='flex items-center gap-2'>
             {/* Select based on type */}
-            <div className='z-50 relative'>
+            <div className='relative'>
               <div onClick={()=>{setShowSelectDropdown(!showSelectDropdown)}} className='flex gap-16 items-center bg-white p-2 z-50'>
                 <p className='font-medium text-xsm'>Select</p>
               <i  className={`fa fa-angle-down duration-300 ${showSelectDropdown ? 'rotate-180' : ''}`} aria-hidden="true"></i>
               </div>
-              <div className={`${showSelectDropdown ? 'visible opacity-100' : 'invisible opacity-0'} duration-100 z-[1000] absolute shadow-lg top-10 right-0 bg-white`}>
+              <div className={`${showSelectDropdown ? 'visible opacity-100' : 'invisible opacity-0'} duration-100 z-[99999] absolute shadow-lg top-10 right-0 bg-white`}>
                 <ul>
                   {selectOption.map((item,index)=>{
                     return(
-                      <li onClick={()=>{setSelectOptionValue(item)}} key={index}><p className='font-medium text-black pl-4 pr-12 text-left py-3 text-xsm hover:bg-gray-50'>{item}</p></li>
+                      <li onClick={()=>{setSelectOptionValue(item) ; setShowSelectDropdown(false)}} key={index}><p className='font-medium text-black pl-4 pr-12 text-left py-3 text-xsm hover:bg-gray-50'>{item}</p></li>
                     )
                   })}
                 </ul>
@@ -160,7 +160,7 @@ const Professionals = () => {
                   );
                 })
                : (
-                <p>hello</p>
+                <p className='font-semibold text-xsm p-4'>N/A</p>
               )}
               
             </tbody>
@@ -168,7 +168,7 @@ const Professionals = () => {
         </div>
 
         {/* Pagination */}
-        <div className='flex z-[10] items-center justify-between'>
+        <div className='flex items-center justify-between'>
             <p className='font-semibold text-xsm text-slate-500'>Showing 1 of 1 Pages</p>
             <div className=' flex items-center gap-1 p-2 z-50 rounded-lg'>
             <p className='font-semibold text-xsm text-slate-500'>Go to Page No</p>
