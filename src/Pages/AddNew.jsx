@@ -20,7 +20,7 @@ const AddNew = () => {
 
             {pfp ?  
             <div className='flex items-center  justify-center'>
-            <div className='w-32 h-32 rounded-full shadowtable ring-8 z-50 ring-white group relative ring-1 overflow-hidden ring-black/5'>
+            <div className='w-32 h-32 rounded-full shadowtable ring-8 z-50 ring-white  group relative ring-1 overflow-hidden ring-black/5'>
             <div className='bg-black absolute w-full flex items-center justify-center group-hover:visible bg-opacity-10  group-hover:opacity-100 opacity-0 duration-500 invisible top-0 right-0 h-full'>
                 <i className='fa fa-trash text-white fa-5x cursor-pointer' onClick={()=>{setPfp(null)}}></i>
             </div>
@@ -29,9 +29,9 @@ const AddNew = () => {
             </div>
             : 
             <div className="flex items-center flex-col justify-center">
-                <label for="dropzone-file" className="flex w-32 rounded-full h-32 flex items-center justify-center py-12 border-2 border-blue-500 ring-1 ring-black-500 cursor-pointer bg-blue-50  hover:bg-blue-50">
+                <label for="dropzone-file" className="flex w-32 rounded-full hover:bg-blue-50/70 h-32 flex items-center justify-center py-12 border-2 border-blue-500 ring-1 ring-black-500 cursor-pointer bg-blue-50  hover:bg-blue-50">
                 <div className="flex flex-col items-center justify-center ">
-                <i className="fa fa-user-o text-slate-500 fa-2x" aria-hidden="true"></i>
+                <i className="fa fa-picture-o fa-4x text-slate-500 fa-2x" aria-hidden="true"></i>
                 </div>
                 <input onChange={handleChangeProfile} id="dropzone-file" type="file" className="hidden" />
                 </label>
