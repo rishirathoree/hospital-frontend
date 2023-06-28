@@ -1,13 +1,27 @@
-import React, { useState } from 'react'
-
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 const Hospital = () => {
-    const dummyArray = Array(5).fill(1)
     const [showEditPopup,setShowEditPopup] = useState(false)
     const [addHopsitalPopup,setaddHopsitalPopup] = useState(false)
+    const [HospitalDetails,setHospitalDetails] = useState(null)
+    console.log(HospitalDetails && HospitalDetails.length)
+    useEffect(()=>{
+      getHospitalDetails()
+    },[])
+    const getHospitalDetails = async () => {
+      try {
+        const data = await axios.get('http://donka-node.codemeg.com/hospitallist/get-all-hospital-name')
+        setHospitalDetails(data.data.data)
+      } 
+      catch (error) {
+        console.log(error)
+      }
+    }
+    
 
   return (
     <>
-    <div className='flex flex-col items-center bg-blue-50/50 justify-center p-20'>
+    <div className={`flex flex-col items-center bg-blue-50/50 justify-start ${HospitalDetails && HospitalDetails.length <= 3 ? 'h-screen' : 'h-full'} lg:p-20 md:p-12 sm:p-4`}>
         <div className='space-y-2'>
         <div className='flex items-center justify-between'>
             <p className='font-bold text-lg'>Hospitals</p>
@@ -32,14 +46,14 @@ const Hospital = () => {
               </tr>
             </thead>
             <tbody>
-              {dummyArray.map((item, index) => {
+              {HospitalDetails && HospitalDetails.map((item, index) => {
                 return (
                   <tr
                     key={index}
                     className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                   >
-                    <td className="px-6 py-4">6265</td>
-                    <td className="pr-80 py-4">rishi@gmail.com</td>
+                    <td className="px-6 py-4">{item.hospitalId}</td>
+                    <td className="pr-80 py-4">{item.hospitalName}</td>
                     <td className="px-6 py-4">
                       <div className="flex gap-4 items-center ">
                         <i onClick={()=>{setShowEditPopup(!showEditPopup)}} className="cursor-pointer fa fa-pencil-square-o inline-block p-2 rounded-full bg-blue-100"></i>

@@ -29,7 +29,7 @@ const AddNew = () => {
             </div>
             : 
             <div className="flex items-center flex-col justify-center">
-                <label for="dropzone-file" className="flex w-32 rounded-full hover:bg-blue-50/70 h-32 flex items-center justify-center py-12 border-2 border-blue-500 ring-1 ring-black-500 cursor-pointer bg-blue-50  hover:bg-blue-50">
+                <label htmlFor="dropzone-file" className="flex w-32 rounded-full hover:bg-blue-50/70 h-32 flex items-center justify-center py-12 border-2 border-blue-500 ring-1 ring-black-500 cursor-pointer bg-blue-50  hover:bg-blue-50">
                 <div className="flex flex-col items-center justify-center ">
                 <i className="fa fa-picture-o fa-4x text-slate-500 fa-2x" aria-hidden="true"></i>
                 </div>
@@ -129,7 +129,7 @@ const AddNew = () => {
                 
                 <div className="flex items-start flex-col justify-center w-1/2">
                     <p className='font-semibold mb-2 text-xsm'>Document Upload</p>
-                <label for="dropzone-file" className="flex flex-col items-center justify-center w-full py-12 border-2 border-blue-500 border-dashed rounded-lg cursor-pointer bg-blue-50  hover:bg-blue-50">
+                <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full py-12 border-2 border-blue-500 border-dashed rounded-lg cursor-pointer bg-blue-50  hover:bg-blue-50">
                 <div className="flex flex-col items-center justify-center ">
                 <i className="fa fa-file-image-o text-blue-500 fa-2x" aria-hidden="true"></i>
                 <p className="text-sm text-blue-500 ">Choose Picture</p>
