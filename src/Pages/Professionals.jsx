@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const Professionals = () => {
   const [professionals,setProfessionals ] = useState(null)
     const inputRef = useRef(null)
+  const dummy = Array(10).fill(1)
     const focusInput = () => {inputRef.current && inputRef.current.focus()}
     const [showSelectDropdown,setShowSelectDropdown] = useState(false)
     const [selectOptionValue,setSelectOptionValue] = useState('All')
@@ -71,7 +72,7 @@ const Professionals = () => {
               </tr>
             </thead>
             <tbody>
-              {filterBasedOnSelectedValue && filterBasedOnSelectedValue.map((item, index) => {
+              {dummy && dummy.map((item, index) => {
                   return (
                     <tr
                       key={index}
