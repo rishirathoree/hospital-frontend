@@ -78,12 +78,12 @@ const Professionals = () => {
                       key={index}
                       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                     >
-                      <td className="px-6 py-4 ">{item.userId}</td>
-                      <td className="px-6 py-4 ">{item.userName}</td>
-                      <td className="px-6 py-4 ">{item.userType}</td>
-                      <td className="px-6 py-4 ">{item.userEmail}</td>
-                      <td className="px-6 py-4 ">{item.userMobile}</td>
-                      <td className="px-6 py-4 ">{item.userPid}</td>
+                      <td className="px-6 py-4 ">465123</td>
+                      <td className="px-6 py-4 ">John Adam</td>
+                      <td className="px-6 py-4 ">Patient</td>
+                      <td className="px-6 py-4 ">rishi3@gmail.com</td>
+                      <td className="px-6 py-4 ">6135496834529</td>
+                      <td className="px-6 py-4 ">7746</td>
                       <td className="flex items-center px-6 py-8 space-x-3 text-center">
                         <div className="flex gap-4 items-center ">
                           <i className="fa cursor-pointer fa-sm fa-trash inline-block p-2 rounded-full bg-red-100"></i>
